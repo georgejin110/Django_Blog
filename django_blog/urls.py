@@ -16,10 +16,11 @@ Including another URLconf
 from django.conf.urls import include, url, patterns
 from django.contrib import admin
 
-admin.autodiscover()
+# admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', include('blog.urls')),
-    url('^markdown/', include( 'django_markdown.urls')),
+    # url(r'^category/', include('blog.urls'))
+    # url('^markdown/', include( 'django_markdown.urls')),
 )

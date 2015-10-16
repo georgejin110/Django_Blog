@@ -1,11 +1,14 @@
 {% extends "base.html" %}
 {% block title %}Home{% endblock %}
+
 {% block content %}
-{% for post in posts %}
-<div class="post">
-  <h2>{{ post.title }}</h2>
-  <div class="info">{{ post.author.username }} / {{ post.published_date|date:"Y/m/d H:i" }}</div>
-  <div class="content">{{ post.content_markdown }}</div>
-</div>
+
+{% for post in post_list %}
+{% include "blog/posts.html" %}
+    <a href="{% url 'post' %}">{{ post.title }}</a>
+{% endfor %}
+{% for category in categories %}
+{% include "blog/posts.html" %}
+    <a href="{% url 'category' %}">{{ category.title }}</a>
 {% endfor %}
 {% endblock %}

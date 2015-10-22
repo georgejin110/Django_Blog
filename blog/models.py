@@ -27,7 +27,7 @@ class Post(models.Model):
 
     # @permalink
     def get_absolute_url(self):
-        return reverse('blog.views.post', kwargs={'slug': self.slug})
+        return reverse('post', kwargs={'slug': self.slug})
 
 @python_2_unicode_compatible
 class Category(models.Model):  

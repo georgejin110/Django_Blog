@@ -5,10 +5,10 @@
 
 {% for post in post_list %}
 {% include "blog/posts.html" %}
-    <a href="{% url 'post' %}">{{ post.title }}</a>
+    <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
 {% endfor %}
 {% for category in categories %}
 {% include "blog/posts.html" %}
-    <a href="{% url 'category' %}">{{ category.title }}</a>
+    <a href="{{ category.get_absolute_url }}">{{ category.title }}</a>
 {% endfor %}
 {% endblock %}
